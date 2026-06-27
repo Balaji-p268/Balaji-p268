@@ -5,70 +5,243 @@ const profile = require("../config/profile.json");
 
 module.exports = function () {
 
-    const progressWidth = Math.floor((profile.xp / profile.maxXp) * 500);
+    const bannerWidth = 1200;
+    const bannerHeight = 320;
+
+    const cardX = 40;
+    const cardY = 30;
+    const cardWidth = 1120;
+    const cardHeight = 260;
+
+    const progressWidth = Math.floor((profile.xp / profile.maxXp) * 420);
 
     const svg = `
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="1200"
-     height="300">
+     width="${bannerWidth}"
+     height="${bannerHeight}"
+     viewBox="0 0 ${bannerWidth} ${bannerHeight}">
 
-<rect width="1200" height="300" fill="#0D1117"/>
+<defs>
+
+<linearGradient id="background"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%" stop-color="#0D1117"/>
+
+<stop offset="100%" stop-color="#161B22"/>
+
+</linearGradient>
+
+<linearGradient id="xp"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="0%">
+
+<stop offset="0%" stop-color="#58A6FF"/>
+
+<stop offset="100%" stop-color="#2EA043"/>
+
+</linearGradient>
+
+<filter id="shadow">
+<feDropShadow
+dx="0"
+dy="0"
+stdDeviation="10"
+flood-color="#000000"
+flood-opacity="0.45"/>
+</filter>
+
+</defs>
+
+<!-- Background -->
+
+<rect
+width="${bannerWidth}"
+height="${bannerHeight}"
+fill="url(#background)"/>
+
+<!-- Glass Card -->
+
+<rect
+x="${cardX}"
+y="${cardY}"
+width="${cardWidth}"
+height="${cardHeight}"
+rx="26"
+fill="#161B22"
+stroke="#30363D"
+stroke-width="2"
+filter="url(#shadow)"/>
+
+<!-- Name -->
 
 <text
-x="60"
-y="80"
-fill="white"
-font-size="48"
+x="80"
+y="95"
+fill="#FFFFFF"
+font-size="46"
 font-family="Segoe UI"
-font-weight="bold">
+font-weight="700">
 
 ${profile.name}
 
 </text>
 
+<!-- Title -->
+
 <text
-x="60"
-y="130"
+x="80"
+y="135"
 fill="#58A6FF"
-font-size="24">
+font-size="24"
+font-family="Segoe UI">
 
 ${profile.title}
 
 </text>
 
+<!-- Subtitle -->
+
 <text
-x="60"
+x="80"
 y="170"
 fill="#8B949E"
-font-size="18">
+font-size="18"
+font-family="Segoe UI">
 
 ${profile.subtitle}
 
 </text>
 
-<rect
-x="60"
-y="220"
-width="500"
-height="12"
-rx="6"
-fill="#30363D"/>
-
-<rect
-x="60"
-y="220"
-width="${progressWidth}"
-height="12"
-rx="6"
-fill="#58A6FF"/>
+<!-- XP Label -->
 
 <text
-x="580"
-y="230"
-fill="#C9D1D9"
-font-size="16">
+x="80"
+y="215"
+fill="#FFFFFF"
+font-size="16"
+font-family="Segoe UI">
 
 Level ${profile.level}
+
+</text>
+
+<!-- XP Background -->
+
+<rect
+x="80"
+y="230"
+width="420"
+height="14"
+rx="7"
+fill="#30363D"/>
+
+<!-- XP Fill -->
+
+<rect
+x="80"
+y="230"
+width="${progressWidth}"
+height="14"
+rx="7"
+fill="url(#xp)"/>
+
+<!-- XP Text -->
+
+<text
+x="520"
+y="242"
+fill="#C9D1D9"
+font-size="14"
+font-family="Segoe UI">
+
+${profile.xp}/${profile.maxXp} XP
+
+</text>
+
+<!-- Divider -->
+
+<line
+x1="610"
+y1="70"
+x2="610"
+y2="245"
+stroke="#30363D"
+stroke-width="2"/>
+
+<!-- Current Quest -->
+
+<text
+x="650"
+y="95"
+fill="#58A6FF"
+font-size="22"
+font-family="Segoe UI"
+font-weight="600">
+
+Current Quest
+
+</text>
+
+<text
+x="650"
+y="130"
+fill="#FFFFFF"
+font-size="18"
+font-family="Segoe UI">
+
+▶ Building Developer RPG Profile
+
+</text>
+
+<text
+x="650"
+y="165"
+fill="#8B949E"
+font-size="16"
+font-family="Segoe UI">
+
+Learning • Building • Improving
+
+</text>
+
+<!-- Footer -->
+
+<text
+x="650"
+y="225"
+fill="#58A6FF"
+font-size="15"
+font-family="Segoe UI">
+
+GitHub
+
+</text>
+
+<text
+x="740"
+y="225"
+fill="#58A6FF"
+font-size="15"
+font-family="Segoe UI">
+
+Portfolio
+
+</text>
+
+<text
+x="850"
+y="225"
+fill="#58A6FF"
+font-size="15"
+font-family="Segoe UI">
+
+Email
 
 </text>
 
@@ -80,5 +253,5 @@ Level ${profile.level}
         svg
     );
 
-    console.log("🎨 banner.svg generated");
+    console.log("🎨 Premium banner generated");
 };

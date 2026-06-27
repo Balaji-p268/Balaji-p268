@@ -5,55 +5,114 @@ const profile = require("../config/profile.json");
 
 module.exports = function () {
 
-    let y = 80;
-    let skills = "";
+    let y = 95;
+    let cards = "";
 
     Object.entries(profile.skills).forEach(([skill, level]) => {
 
-        const stars = "★".repeat(level) + "☆".repeat(5 - level);
+        const barWidth = level * 40;
 
-        skills += `
+        cards += `
+
 <text
-x="60"
+x="70"
 y="${y}"
-fill="#58A6FF"
-font-size="20"
-font-family="Segoe UI">
+fill="#FFFFFF"
+font-size="18"
+font-family="Segoe UI"
+font-weight="600">
 
 ${skill}
 
 </text>
 
+<rect
+x="220"
+y="${y-14}"
+width="220"
+height="12"
+rx="6"
+fill="#30363D"/>
+
+<rect
+x="220"
+y="${y-14}"
+width="${barWidth}"
+height="12"
+rx="6"
+fill="#58A6FF"/>
+
 <text
-x="240"
-y="${y}"
-fill="#FFD700"
-font-size="20"
+x="460"
+y="${y-2}"
+fill="#8B949E"
+font-size="14"
 font-family="Segoe UI">
 
-${stars}
+${level}/5
 
 </text>
+
 `;
 
-        y += 35;
+        y += 42;
+
     });
 
     const svg = `
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="550"
-     height="450">
+     width="560"
+     height="470"
+     viewBox="0 0 560 470">
+
+<defs>
+
+<linearGradient id="bg"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%" stop-color="#0D1117"/>
+
+<stop offset="100%" stop-color="#161B22"/>
+
+</linearGradient>
+
+<linearGradient id="skillBar"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="0%">
+
+<stop offset="0%" stop-color="#58A6FF"/>
+
+<stop offset="100%" stop-color="#2EA043"/>
+
+</linearGradient>
+
+</defs>
 
 <rect
-width="550"
-height="450"
-fill="#0D1117"/>
+width="560"
+height="470"
+fill="url(#bg)"/>
+
+<rect
+x="20"
+y="20"
+width="520"
+height="430"
+rx="18"
+fill="#161B22"
+stroke="#30363D"
+stroke-width="2"/>
 
 <text
-x="50"
-y="40"
-fill="white"
-font-size="30"
+x="40"
+y="55"
+fill="#FFFFFF"
+font-size="28"
 font-family="Segoe UI"
 font-weight="bold">
 
@@ -61,7 +120,7 @@ Skills Dashboard
 
 </text>
 
-${skills}
+${cards}
 
 </svg>
 `;
@@ -71,6 +130,6 @@ ${skills}
         svg
     );
 
-    console.log("⚡ skills.svg generated");
+    console.log("⚡ Premium skills generated");
 
 };

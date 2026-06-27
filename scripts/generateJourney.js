@@ -1,32 +1,154 @@
 const fs = require("fs");
 const path = require("path");
+
 const profile = require("../config/profile.json");
 const hero = require("./sprite");
-const positions = {
-    1: 130,
-    2: 300,
-    3: 470,
-    4: 640,
-    5: 810,
-    6: 980
-};
-
-const heroX = positions[profile.level] || 130;
 
 module.exports = function () {
 
-const svg = `
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="1200"
-     height="260">
+const locations = [
+    {
+        title: "HTML Village",
+        x: 120,
+        color: "#E34F26",
+        icon: "🏠"
+    },
+    {
+        title: "CSS Forest",
+        x: 260,
+        color: "#1572B6",
+        icon: "🌳"
+    },
+    {
+        title: "JavaScript City",
+        x: 400,
+        color: "#F7DF1E",
+        icon: "🏙"
+    },
+    {
+        title: "React Temple",
+        x: 540,
+        color: "#61DAFB",
+        icon: "⛩"
+    },
+    {
+        title: "Node Kingdom",
+        x: 680,
+        color: "#3C873A",
+        icon: "🏰"
+    },
+    {
+        title: "Docker Harbor",
+        x: 820,
+        color: "#2496ED",
+        icon: "🚢"
+    },
+    {
+        title: "Cloud Summit",
+        x: 960,
+        color: "#7C3AED",
+        icon: "☁"
+    },
+    {
+        title: "AI Citadel",
+        x: 1100,
+        color: "#10B981",
+        icon: "🤖"
+    }
+];
 
-<rect width="1200" height="260" fill="#0D1117"/>
+const heroLevel =
+    Math.min(
+        Math.max(profile.level,1),
+        locations.length
+    );
+
+const heroPosition =
+    locations[heroLevel-1].x;
+
+let nodes = "";
+let labels = "";
+
+locations.forEach((place,index)=>{
+
+const unlocked = index < heroLevel;
+
+const fill = unlocked
+    ? place.color
+    : "#30363D";
+
+nodes += `
+<circle
+cx="${place.x}"
+cy="170"
+r="16"
+fill="${fill}"
+stroke="#FFFFFF"
+stroke-width="2"/>
+`;
+
+labels += `
+<text
+x="${place.x-55}"
+y="220"
+fill="#C9D1D9"
+font-size="15"
+font-family="Segoe UI">
+
+${place.icon} ${place.title}
+
+</text>
+`;
+
+});
+
+const svg = `
+<svg
+xmlns="http://www.w3.org/2000/svg"
+width="1200"
+height="320">
+
+<defs>
+
+<linearGradient
+id="bg"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop
+offset="0%"
+stop-color="#0D1117"/>
+
+<stop
+offset="100%"
+stop-color="#161B22"/>
+
+</linearGradient>
+
+</defs>
+
+<rect
+width="1200"
+height="320"
+fill="url(#bg)"/>
+
+<rect
+x="40"
+y="30"
+width="1120"
+height="250"
+rx="24"
+fill="#161B22"
+stroke="#30363D"
+stroke-width="2"/>
 
 <text
-x="40"
-y="45"
-font-size="32"
+x="70"
+y="75"
 fill="white"
+font-size="28"
 font-family="Segoe UI"
 font-weight="bold">
 
@@ -36,36 +158,33 @@ Developer Journey
 
 <line
 x1="120"
-y1="130"
-x2="1080"
-y2="130"
+y1="170"
+x2="1100"
+y2="170"
 stroke="#30363D"
-stroke-width="6"/>
+stroke-width="8"/>
 
-<circle cx="150" cy="130" r="12" fill="#58A6FF"/>
-<circle cx="320" cy="130" r="12" fill="#58A6FF"/>
-<circle cx="490" cy="130" r="12" fill="#58A6FF"/>
-<circle cx="660" cy="130" r="12" fill="#58A6FF"/>
-<circle cx="830" cy="130" r="12" fill="#30363D"/>
-<circle cx="1000" cy="130" r="12" fill="#30363D"/>
+${nodes}
 
-<text x="120" y="170" fill="white" font-size="16">HTML</text>
-<text x="295" y="170" fill="white" font-size="16">CSS</text>
-<text x="430" y="170" fill="white" font-size="16">JavaScript</text>
-<text x="640" y="170" fill="white" font-size="16">React</text>
-<text x="810" y="170" fill="#8B949E" font-size="16">Node.js</text>
-<text x="980" y="170" fill="#8B949E" font-size="16">AI</text>
+<image
+href="./avatar.png"
+x="${heroPosition-30}"
+y="100"
+width="60"
+height="60"/>
 
-${hero(heroX - 20,105)}
-
+${labels}
 </svg>
 `;
 
-fs.writeFileSync(
-path.join(__dirname,"../assets/developer-journey.svg"),
-svg
-);
+    fs.writeFileSync(
+        path.join(
+            __dirname,
+            "../assets/developer-journey.svg"
+        ),
+        svg
+    );
 
-console.log("🗺 developer-journey.svg generated");
+    console.log("🗺 Premium developer-journey.svg generated");
 
-}
+};

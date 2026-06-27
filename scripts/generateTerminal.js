@@ -5,52 +5,157 @@ const profile = require("../config/profile.json");
 
 module.exports = function () {
 
-const svg = `
+    const svg = `
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="900"
-     height="380">
+     width="1000"
+     height="420"
+     viewBox="0 0 1000 420">
 
-<rect width="900" height="380" fill="#0D1117"/>
+<defs>
+
+<linearGradient id="bg"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%" stop-color="#0D1117"/>
+<stop offset="100%" stop-color="#161B22"/>
+
+</linearGradient>
+
+</defs>
 
 <rect
-x="20"
-y="20"
-width="860"
-height="340"
-rx="10"
-fill="#161B22"/>
+width="1000"
+height="420"
+fill="url(#bg)"/>
+
+<rect
+x="40"
+y="30"
+width="920"
+height="360"
+rx="18"
+fill="#161B22"
+stroke="#30363D"
+stroke-width="2"/>
+
+<!-- Terminal Header -->
+
+<circle cx="70" cy="55" r="7" fill="#FF5F56"/>
+<circle cx="95" cy="55" r="7" fill="#FFBD2E"/>
+<circle cx="120" cy="55" r="7" fill="#27C93F"/>
 
 <text
-x="40"
-y="55"
-fill="#58A6FF"
-font-size="24"
+x="160"
+y="61"
+fill="#8B949E"
+font-size="18"
 font-family="Consolas">
 
 Balaji@github:~$
 
 </text>
 
-<text x="40" y="100" fill="white" font-size="18">whoami</text>
+<!-- Content -->
 
-<text x="40" y="130" fill="#58A6FF" font-size="18">${profile.name}</text>
+<text
+x="70"
+y="110"
+fill="#58A6FF"
+font-size="18"
+font-family="Consolas">
 
-<text x="40" y="180" fill="white" font-size="18">role</text>
+$ whoami
 
-<text x="40" y="210" fill="#58A6FF" font-size="18">${profile.title}</text>
+</text>
 
-<text x="40" y="260" fill="white" font-size="18">level</text>
+<text
+x="90"
+y="140"
+fill="#FFFFFF"
+font-size="18"
+font-family="Consolas">
 
-<text x="40" y="290" fill="#58A6FF" font-size="18">${profile.level}</text>
+${profile.name}
+
+</text>
+
+<text
+x="70"
+y="190"
+fill="#58A6FF"
+font-size="18"
+font-family="Consolas">
+
+$ role
+
+</text>
+
+<text
+x="90"
+y="220"
+fill="#FFFFFF"
+font-size="18"
+font-family="Consolas">
+
+${profile.title}
+
+</text>
+
+<text
+x="70"
+y="270"
+fill="#58A6FF"
+font-size="18"
+font-family="Consolas">
+
+$ level
+
+</text>
+
+<text
+x="90"
+y="300"
+fill="#FFFFFF"
+font-size="18"
+font-family="Consolas">
+
+Level ${profile.level}
+
+</text>
+
+<text
+x="70"
+y="350"
+fill="#58A6FF"
+font-size="18"
+font-family="Consolas">
+
+$ status
+
+</text>
+
+<text
+x="90"
+y="380"
+fill="#2EA043"
+font-size="18"
+font-family="Consolas">
+
+Building every day...
+
+</text>
 
 </svg>
 `;
 
-fs.writeFileSync(
-path.join(__dirname,"../assets/terminal.svg"),
-svg
-);
+    fs.writeFileSync(
+        path.join(__dirname, "../assets/terminal.svg"),
+        svg
+    );
 
-console.log("💻 terminal.svg generated");
+    console.log("💻 Premium terminal generated");
 
-}
+};
