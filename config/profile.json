@@ -2,10 +2,59 @@
   "name": "Balaji P",
   "title": "Full Stack Developer",
   "subtitle": "Building scalable software • Exploring AI • Always learning",
-  "level": 1,
+
+  "level": 4,
   "xp": 20,
   "maxXp": 100,
+
   "github": "balaji-p268",
+
   "email": "balajp.01r@gmail.com",
-  "portfolio": "https://balaji-codes-light.lovable.app/"
+
+  "portfolio": "https://balaji-codes-light.lovable.app/",
+
+ "skills": {
+    "HTML": 5,
+    "CSS": 5,
+    "JavaScript": 5,
+    "React": 4,
+    "Node.js": 4,
+    "MongoDB": 4,
+    "Docker": 3,
+    "AWS": 2,
+    "AI": 2
+},
+
+"achievements": [
+    {
+        "title": "First Project",
+        "icon": "🚀",
+        "unlocked": true
+    },
+    {
+        "title": "React Explorer",
+        "icon": "⚛",
+        "unlocked": true
+    },
+    {
+        "title": "Node Adventurer",
+        "icon": "🟢",
+        "unlocked": true
+    },
+    {
+        "title": "Docker Explorer",
+        "icon": "🐳",
+        "unlocked": false
+    },
+    {
+        "title": "Cloud Learner",
+        "icon": "☁",
+        "unlocked": false
+    },
+    {
+        "title": "AI Explorer",
+        "icon": "🤖",
+        "unlocked": false
+    }
+]
 }

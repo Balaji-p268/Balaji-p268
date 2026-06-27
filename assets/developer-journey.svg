@@ -42,18 +42,18 @@ stroke-width="6"/>
 
 
 <!-- Hair -->
-<rect x="118" y="105" width="4" height="4" fill="#1E1E1E"/>
-<rect x="122" y="103" width="4" height="4" fill="#1E1E1E"/>
-<rect x="126" y="105" width="4" height="4" fill="#1E1E1E"/>
+<rect x="628" y="105" width="4" height="4" fill="#1E1E1E"/>
+<rect x="632" y="103" width="4" height="4" fill="#1E1E1E"/>
+<rect x="636" y="105" width="4" height="4" fill="#1E1E1E"/>
 
 <!-- Face -->
-<rect x="120" y="109" width="8" height="8" fill="#F2C094"/>
+<rect x="630" y="109" width="8" height="8" fill="#F2C094"/>
 
 <!-- Body -->
-<rect x="118" y="117" width="12" height="12" fill="#FF8C42"/>
+<rect x="628" y="117" width="12" height="12" fill="#FF8C42"/>
 
 <!-- Laptop -->
-<rect x="130" y="117" width="10" height="8" fill="#58A6FF"/>
+<rect x="640" y="117" width="10" height="8" fill="#58A6FF"/>
 
 
 

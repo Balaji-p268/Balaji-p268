@@ -1,0 +1,91 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+width="600"
+height="400">
+
+<rect
+width="600"
+height="400"
+fill="#0D1117"/>
+
+<text
+x="50"
+y="40"
+fill="white"
+font-size="30"
+font-family="Segoe UI"
+font-weight="bold">
+
+Achievements
+
+</text>
+
+
+<text
+x="60"
+y="80"
+fill="#58A6FF"
+font-size="22"
+font-family="Segoe UI">
+
+🚀 First Project
+
+</text>
+
+<text
+x="60"
+y="125"
+fill="#58A6FF"
+font-size="22"
+font-family="Segoe UI">
+
+⚛ React Explorer
+
+</text>
+
+<text
+x="60"
+y="170"
+fill="#58A6FF"
+font-size="22"
+font-family="Segoe UI">
+
+🟢 Node Adventurer
+
+</text>
+
+<text
+x="60"
+y="215"
+fill="#8B949E"
+font-size="22"
+font-family="Segoe UI">
+
+🐳 Docker Explorer
+
+</text>
+
+<text
+x="60"
+y="260"
+fill="#8B949E"
+font-size="22"
+font-family="Segoe UI">
+
+☁ Cloud Learner
+
+</text>
+
+<text
+x="60"
+y="305"
+fill="#8B949E"
+font-size="22"
+font-family="Segoe UI">
+
+🤖 AI Explorer
+
+</text>
+
+
+</svg>

@@ -1,0 +1,223 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="550"
+     height="450">
+
+<rect
+width="550"
+height="450"
+fill="#0D1117"/>
+
+<text
+x="50"
+y="40"
+fill="white"
+font-size="30"
+font-family="Segoe UI"
+font-weight="bold">
+
+Skills Dashboard
+
+</text>
+
+
+<text
+x="60"
+y="80"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+HTML
+
+</text>
+
+<text
+x="240"
+y="80"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★★
+
+</text>
+
+<text
+x="60"
+y="115"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+CSS
+
+</text>
+
+<text
+x="240"
+y="115"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★★
+
+</text>
+
+<text
+x="60"
+y="150"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+JavaScript
+
+</text>
+
+<text
+x="240"
+y="150"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★★
+
+</text>
+
+<text
+x="60"
+y="185"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+React
+
+</text>
+
+<text
+x="240"
+y="185"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★☆
+
+</text>
+
+<text
+x="60"
+y="220"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+Node.js
+
+</text>
+
+<text
+x="240"
+y="220"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★☆
+
+</text>
+
+<text
+x="60"
+y="255"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+MongoDB
+
+</text>
+
+<text
+x="240"
+y="255"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★★☆
+
+</text>
+
+<text
+x="60"
+y="290"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+Docker
+
+</text>
+
+<text
+x="240"
+y="290"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★★☆☆
+
+</text>
+
+<text
+x="60"
+y="325"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+AWS
+
+</text>
+
+<text
+x="240"
+y="325"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★☆☆☆
+
+</text>
+
+<text
+x="60"
+y="360"
+fill="#58A6FF"
+font-size="20"
+font-family="Segoe UI">
+
+AI
+
+</text>
+
+<text
+x="240"
+y="360"
+fill="#FFD700"
+font-size="20"
+font-family="Segoe UI">
+
+★★☆☆☆
+
+</text>
+
+
+</svg>
