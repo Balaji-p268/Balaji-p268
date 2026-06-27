@@ -1,0 +1,84 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#0D1117"/>
+<stop offset="100%" stop-color="#161B22"/>
+</linearGradient>
+
+<linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#58A6FF"/>
+<stop offset="100%" stop-color="#00D26A"/>
+</linearGradient>
+
+</defs>
+
+<rect width="1200" height="300" rx="20" fill="url(#bg)"/>
+
+<circle cx="1050" cy="70" r="90" fill="#58A6FF" opacity="0.08"/>
+
+<circle cx="980" cy="220" r="70" fill="#00D26A" opacity="0.08"/>
+
+<text
+x="60"
+y="95"
+font-size="48"
+font-family="Segoe UI"
+fill="#FFFFFF"
+font-weight="bold">
+
+Balaji P
+
+</text>
+
+<text
+x="60"
+y="145"
+font-size="24"
+font-family="Segoe UI"
+fill="#58A6FF">
+
+Full Stack Developer • AI Explorer • Cloud Learner
+
+</text>
+
+<text
+x="60"
+y="190"
+font-size="18"
+font-family="Segoe UI"
+fill="#C9D1D9">
+
+Building scalable software • Solving problems • Learning every day
+
+</text>
+
+<rect
+x="60"
+y="225"
+width="420"
+height="8"
+rx="4"
+fill="#30363D"/>
+
+<rect
+x="60"
+y="225"
+width="260"
+height="8"
+rx="4"
+fill="url(#accent)"/>
+
+<text
+x="500"
+y="232"
+font-size="16"
+font-family="Segoe UI"
+fill="#8B949E">
+
+Current Mission → Software Engineer
+
+</text>
+
+</svg>
