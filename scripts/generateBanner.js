@@ -1,4 +1,13 @@
+const fs = require("fs");
+const path = require("path");
 
+const profile = require("../config/profile.json");
+
+module.exports = function () {
+
+    const progressWidth = Math.floor((profile.xp / profile.maxXp) * 500);
+
+    const svg = `
 <svg xmlns="http://www.w3.org/2000/svg"
      width="1200"
      height="300">
@@ -13,7 +22,7 @@ font-size="48"
 font-family="Segoe UI"
 font-weight="bold">
 
-Balaji P
+${profile.name}
 
 </text>
 
@@ -23,7 +32,7 @@ y="130"
 fill="#58A6FF"
 font-size="24">
 
-Full Stack Developer
+${profile.title}
 
 </text>
 
@@ -33,7 +42,7 @@ y="170"
 fill="#8B949E"
 font-size="18">
 
-Building scalable software • Exploring AI • Always learning
+${profile.subtitle}
 
 </text>
 
@@ -48,7 +57,7 @@ fill="#30363D"/>
 <rect
 x="60"
 y="220"
-width="100"
+width="${progressWidth}"
 height="12"
 rx="6"
 fill="#58A6FF"/>
@@ -59,8 +68,17 @@ y="230"
 fill="#C9D1D9"
 font-size="16">
 
-Level 1
+Level ${profile.level}
 
 </text>
 
 </svg>
+`;
+
+    fs.writeFileSync(
+        path.join(__dirname, "../assets/banner.svg"),
+        svg
+    );
+
+    console.log("🎨 banner.svg generated");
+};
